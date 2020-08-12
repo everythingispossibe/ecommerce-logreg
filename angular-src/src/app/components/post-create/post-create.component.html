@@ -1,4 +1,5 @@
-<div>
+<br /><br /><br /><br /><br /><br /><br />
+<div style="text-align: center;">
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
     <div>
       <input
@@ -9,7 +10,20 @@
         minlength="3"
         #title="ngModel"
       />
+
       <div *ngIf="title.invalid">Please Enter a post title.</div>
+    </div>
+
+    <div>
+      <input
+        type="text"
+        name="price"
+        ngModel
+        required
+        minlength="3"
+        #price="ngModel"
+      />
+      <div *ngIf="price.invalid">Please Enter a post price ($).</div>
     </div>
 
     <div>
@@ -22,10 +36,9 @@
       ></textarea>
       <div *ngIf="content.invalid">Please Enter a post content.</div>
     </div>
+
     <button color="accent" type="submit">
-      Save Post
+      Upload
     </button>
   </form>
 </div>
-
-<p></p>

@@ -11,6 +11,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
@@ -22,6 +25,11 @@ import { Post } from './components/post.model';
 import { PostCreateComponent } from './components/post-create/post-create.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { CartComponent } from './components/cart/cart.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,6 +59,8 @@ declare module '@angular/core' {
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
+    CartComponent,
+    DetailsComponent,
   ],
 
   imports: [
@@ -60,7 +70,12 @@ declare module '@angular/core' {
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
+
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent],
 })

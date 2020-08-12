@@ -2,15 +2,23 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { tokenNotExpired } from 'angular2-jwt';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private loggedIn2: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
   authToken: any;
   user: any;
 
   constructor(private http: Http) {}
+
+  get isLoggedIn2() {
+    return this.loggedIn2.asObservable();
+  }
 
   registerUser(user) {
     let headers = new Headers();
@@ -51,6 +59,7 @@ export class AuthService {
 
   loggedIn() {
     return tokenNotExpired();
+    this.loggedIn2.next(true);
   }
 
   storeUserData(token, user) {
@@ -64,5 +73,6 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+    this.loggedIn2.next(false);
   }
 }

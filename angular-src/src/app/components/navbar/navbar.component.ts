@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,17 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  isLoggedIn2$: Observable<boolean>;
+
   constructor(
     public authService: AuthService,
     private router: Router,
     private flashMessage: FlashMessagesService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn2$ = this.authService.isLoggedIn2;
+  }
 
   onLogoutClick() {
     this.authService.logout();
@@ -26,7 +31,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
     return false;
   }
-}
 
-//do 14min
-//moduleWithProviders greska
+  onBurgerMenuClick() {
+    console.log('test');
+    return false;
+  }
+}

@@ -53,6 +53,7 @@ app.get("/", (req, res) => {
 app.post("/api/posts", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
+    price: req.body.price,
     content: req.body.content,
   });
   console.log(post);
@@ -71,6 +72,13 @@ app.get("/api/posts", (req, res, next) => {
       message: "posts fetched successfuly!",
       posts: documents,
     });
+  });
+});
+
+app.get("/api/posts/:id", (req, res, next) => {
+  Post.findById({ _id: req.params.id }).then((docs) => {
+    console.log(docs);
+    res.status(200).json({ message: "Nadjen" });
   });
 });
 
