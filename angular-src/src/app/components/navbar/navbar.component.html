@@ -77,7 +77,7 @@
 </header>
 
 <div id="mobile-menu">
-  <a id="close-btn" (click)="onBurgerMenuClick()"><img class="img-fluid" src="../../../assets/close.button.png"
+  <a id="close-btn" class="close-btn-position" (click)="onBurgerMenuClick()"><img class="img-fluid" src="../../../assets/close.button.png"
       alt="close" />
   </a>
   <div class="container">
@@ -113,7 +113,7 @@
 
           <div *ngIf="authService.loggedIn()" [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
-            <a class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/upload']">
+            <a  class="mobile-menu-item text-decoration-none text-uppercase h3" [routerLink]="['/upload']">
               Upload product
             </a>
           </div>
