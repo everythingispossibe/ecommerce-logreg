@@ -2,19 +2,34 @@
   <div id="cover-caption" style="margin-top: 2cm;">
     <div id="upload-container" class="container">
       <div class="row text-white">
-        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-
+        <div
+          class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4"
+        >
           <p class="h4 mb-4">Upload your product</p>
           <div class="px-2">
-            <form id="upload-border" class="text-center border border-light p-5">
+            <form
+              id="upload-border"
+              class="text-center border border-light p-5"
+            >
               <div class="form-group">
                 <mat-label>Title</mat-label>
-                <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Ex. dress" />
+                <input
+                  type="text"
+                  [(ngModel)]="title"
+                  name="title"
+                  class="form-control"
+                  placeholder="Ex. dress"
+                />
               </div>
               <div class="form-group">
                 <mat-label>Description</mat-label>
-                <input type="text" [(ngModel)]="content" name="content" class="form-control"
-                  placeholder="Description" />
+                <input
+                  type="text"
+                  [(ngModel)]="content"
+                  name="content"
+                  class="form-control"
+                  placeholder="Description"
+                />
               </div>
               <div class="form-group">
                 <mat-label>Size</mat-label>
@@ -29,21 +44,43 @@
               <div style="display: flex;">
                 <div class="form-group" style="width: 48%;">
                   <mat-label>Quantity</mat-label>
-                  <input type="number" [(ngModel)]="quantity" name="quantity" class="form-control" />
+                  <input
+                    type="number"
+                    [(ngModel)]="quantity"
+                    name="quantity"
+                    class="form-control"
+                  />
                 </div>
                 <div class="form-group" style="width: 48%; margin-left: 0.5cm;">
                   <mat-label>Price</mat-label>
-                  <input type="text" [(ngModel)]="price" name="price" class="form-control" placeholder="Ex. 10$" />
+                  <input
+                    type="text"
+                    [(ngModel)]="price"
+                    name="price"
+                    class="form-control"
+                    placeholder="Ex. 10$"
+                  />
                 </div>
               </div>
 
               <div class="form-group">
                 <mat-label>Picture link</mat-label>
-                <input class="form-control" type="text" name="image" [(ngModel)]="image"
-                  placeholder="https://media.missguided.com/s/missguided/DD925864_set/1/red-ditsy-floral-print-skater-dress" />
+                <input
+                  class="form-control"
+                  type="text"
+                  name="image"
+                  [(ngModel)]="image"
+                  placeholder="https://media.missguided.com/s/missguided/DD925864_set/1/red-ditsy-floral-print-skater-dress"
+                />
               </div>
               <img [src]="image" style="width: 120px; height: 120px;" alt="" />
-              <button mdbBtn color="info" block="true" class="my-4" (click)="doUpload()">
+              <button
+                mdbBtn
+                color="info"
+                block="true"
+                class="my-4"
+                (click)="doUpload()"
+              >
                 UPLOAD
               </button>
             </form>
