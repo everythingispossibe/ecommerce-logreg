@@ -1,5 +1,5 @@
 import { Input, EventEmitter, Output, Component, OnInit } from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ShoppingCartService } from "../../services/shoppingCart.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { ShoppingCartService } from "../../services/shoppingCart.service";
 export class ProductDetailsComponent implements OnInit {
     @Input('product') product: any;
     @Output() closeModalEvent = new EventEmitter();
-    
+
     constructor(
         private cart: ShoppingCartService,
         private snackBar: MatSnackBar
@@ -19,32 +19,17 @@ export class ProductDetailsComponent implements OnInit {
     ngOnInit(): void {
         console.log(this.product)
     }
-    quantity: number = 1;
-    i = 1
 
-    plus() {
-        if (this.i != 0) {
-            this.i++;
-            this.quantity = this.i
-        }
-    }
 
-    minus() {
-        if (this.i != 1) {
-            this.i--;
-            this.quantity = this.i
-        }
-    }
-
-    addToCart(product){
-        this.openSnackBar("The product is added to cart!","Success")
+    addToCart(product) {
+        this.openSnackBar("The product is added to cart!", "Success")
         this.cart.changeShoppingCart(product, this.quantity)
     }
 
     openSnackBar(message: string, action: string) {
         this.snackBar.open(message, action, {
-          duration: 2500,
-      })
+            duration: 2500,
+        })
     }
 
 }

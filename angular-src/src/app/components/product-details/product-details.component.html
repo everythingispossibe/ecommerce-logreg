@@ -29,7 +29,8 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input id="quantity" type="number" name="quantity" class=" form-control" [value]="quantity" />
+              <input id="quantity" type="number" name="quantity" class="quantity form-control" [value]="quantity"
+                [(ngModel)]="quantity" />
               <button mdbBtn class="addToCart" type="button" color="primary" mdbWavesEffect
                 (click)="addToCart(product)">
                 <mdb-icon fas icon="credit-card" class="mr-1"></mdb-icon>Add to card
