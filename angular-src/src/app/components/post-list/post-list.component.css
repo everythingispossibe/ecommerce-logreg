@@ -39,3 +39,18 @@
     font-size: 2vw;
     color: #72a207;
 }
+
+#dashboard-title{
+    position: relative;
+    font-size: 32px;
+    font-family: cursive;
+    color: #000000a8;
+}
+
+#dashboard-title-secound{
+    position: relative;
+    font-size: 21px;
+    font-family: cursive;
+    color: #0000009e;
+}
+
